@@ -13,10 +13,13 @@ public class Estudiante{
     public int Grado {get;set;}
 
     //Añade métodos GetEdad() y SetEdad(int edad) a la clase Estudiante para acceder y modificar la edad.
-    public int GetEdad(){
-        return Edad;
+    public void GetEdad(){
+        Console.WriteLine($"la edad del estudiante es{this.Edad}");
     } 
-    public int SetEdad(int edad){
-        
+    public void SetEdad(int edad){
+        this.Edad=edad;
+        //Usa estos métodos para cambiar la edad y mostrar el valor actualizado.
+
+        Console.WriteLine($"la edad actualizada del estudiante es {this.Edad}");
     }
 }

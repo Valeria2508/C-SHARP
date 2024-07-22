@@ -82,3 +82,21 @@ estu.Edad=21;
 estu.Grado=11;
 Console.WriteLine($"el estudiante se llama {estu.Nombre} tiene {estu.Edad} años y esta en {estu.Grado} grado");
 
+//Crea una instancia de Rectangulo, asigna valores y muestra el área.
+var rectangulo1 = new Rectangulo();
+rectangulo1.Alto=10;
+rectangulo1.Ancho=5.2;
+Console.WriteLine($"el area del rectangulo es {rectangulo1.CalcularArea()}");
+
+//Crea una instancia de Circulo, asigna valores y muestra la circunferencia.
+var diametro = new Circulo();
+diametro.Radio=12.5;
+Console.WriteLine($"la circuferencia es de {diametro.CalcularCircunferencia()}");
+
+//Crea una instancia de Empleado, asigna valores y muestra los detalles
+var empleado1 = new Empleado();
+empleado1.Nombre="Valeria";
+empleado1.Puesto="desarrolladora";
+empleado1.Salario=3000000;
+empleado1.MostrarDetalles();
+
