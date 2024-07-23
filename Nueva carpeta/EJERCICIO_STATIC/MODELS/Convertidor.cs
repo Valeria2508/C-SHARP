@@ -7,10 +7,9 @@ namespace EJERCICIO_STATIC.MODELS;
 
 public class Convertidor{
 
-    public static int Celsius { get; set;}
-    public static int Fahrenheit { get; set;}
-    
-    public static void CelsiusAFahrenheit (){
-        Fahrenheit = (Celsius * 9 / 5) + 32;
+    public static double CelsiusAFahrenheit (double Celsius){
+        return (Celsius *9/5)+32;   
     }
 }
+
+
