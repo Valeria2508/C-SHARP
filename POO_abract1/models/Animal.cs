@@ -7,11 +7,12 @@ namespace POO_abract1.models
 {
     public abstract class Animal //al tener la clase abtracta, no se puede instanciar ni aunque tenga algo estatico
     { //las clases estaticas no permiten heredar
-        public   int Id { get; set;}
-        public   string Nombre {get; set;}
-        public   int Edad { get; set;}
-        public string Especie { get; set;}
-        // private string especie2;
+        public  abstract int Id { get; set;}
+        public  abstract string Nombre {get; set;}
+        public  abstract int Edad { get; set;}
+        public abstract  string Especie { get; set;} 
+
+
         // public string Especie2{
         //     get{return especie2}
         //     set { especie2 = value} forma antigua de abstraccion 
