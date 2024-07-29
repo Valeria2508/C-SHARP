@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace POO_abract1.models
 {
-    public class Animal
-    {
-        public int Id { get; set;}
-        public string Nombre {get; set;}
-        public int Edad { get; set;}
+    public abstract class Animal //al tener la clase abtracta, no se puede instanciar ni aunque tenga algo estatico
+    { //las clases estaticas no permiten heredar
+        public   int Id { get; set;}
+        public   string Nombre {get; set;}
+        public   int Edad { get; set;}
         public string Especie { get; set;}
         // private string especie2;
         // public string Especie2{
@@ -23,6 +23,9 @@ namespace POO_abract1.models
             Edad = edad;
             Especie = especie;
         }
+        //si se tiene el metodo abracto, la clase tambien lo debe de ser
+        // si tengo algo abstracto, toda clase que here debe de tener los metodos que el padre tenga abracto
+        public abstract void Saludar();
 
     }
 }
