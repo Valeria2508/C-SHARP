@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace Aprendizaje_Taller_Estudiantes.models
 {
-    public class Estudiante : Persona
+    public class Estudiante : Persona // se hereda persona a estudiante
     {
-        public string NombreAcudiente { get; set; }
+        public string NombreAcudiente { get; set; }//se definen atributos
         public string CursoActual { get; set; }
         public DateOnly FechaNacimiento { get; set; }
         public List<double> Calificaciones { get; set; } = new List<double>();
 
         public Estudiante(string nombre, string apellido, string tipoDocumento, string numeroDocument, string emal, string telefono, string nombreAcudiente, string cursoActual, DateOnly fechaNacimiento)
-        {
+        { //constructor
             Nombre = nombre;
             Apellido = apellido;
             TipoDocumento = tipoDocumento;
@@ -37,15 +37,15 @@ namespace Aprendizaje_Taller_Estudiantes.models
          
         }
 
-        public void AgregarCalificaciones(double calificacion)
+        public void AgregarCalificaciones(double calificacion)// agg calificaciones a la lista
         {
             Calificaciones.Add(calificacion);
             Console.WriteLine("La calificacion de agrego correctamente");
         }
-         public string ObtenerNumDocumento(){
+         public string ObtenerNumDocumento(){//retorna ya que algunos atributos son protected, de esta manera se pueden acceder a ellos desde otras clases
             return NumeroDocumento;
          }
-        public void MostrarCalificaciones()
+        public void MostrarCalificaciones()//muestra la lista de calificaciones con foreach
         {
             Console.WriteLine($"Calificaciones de {Nombre} {Apellido}");
             foreach (var calificacion in Calificaciones)
@@ -58,19 +58,23 @@ namespace Aprendizaje_Taller_Estudiantes.models
         private void CalcularPromedio()
         {  
 
-         Console.WriteLine($"El promedio de las calificaciones es de: {Calificaciones.Average()}");
+         Console.WriteLine($"El promedio de las calificaciones es de: {Calificaciones.Average()}");//calcula promedio
             
         }
 
-        public int CalcularEdad()
+        public int CalcularEdad()//calcular edad
         {
-            DateOnly fechaActual = DateOnly.FromDateTime(DateTime.Now);
+            DateOnly fechaActual = DateOnly.FromDateTime(DateTime.Now);//resta la fecha actual con la fecha de nacimiento
             int edad = fechaActual.Year - FechaNacimiento.Year;
-            return edad;
+            return edad;//devuelve la edad
 
         }
-        public string ObtenerNombre(){
+        public string ObtenerNombre(){//retorna ya que algunos atributos son protected, de esta manera se pueden acceder a ellos desde otras clases
             return Nombre;
+        }
+
+        public string ObtenerApellido(){
+            return Apellido;
         }
 
         public static void EditarEstudiante(Estudiante estudiante) 
