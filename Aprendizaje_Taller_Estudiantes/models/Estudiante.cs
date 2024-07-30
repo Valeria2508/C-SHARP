@@ -14,6 +14,8 @@ namespace Aprendizaje_Taller_Estudiantes.models
 
         public Estudiante(string nombre, string apellido, string tipoDocumento, string numeroDocument, string emal, string telefono, string nombreAcudiente, string cursoActual, DateOnly fechaNacimiento)
         { //constructor
+        // si el padre no tiene constructor, no se usa el base
+        //  si el padre si tiene constructor, se usa el base
             Nombre = nombre;
             Apellido = apellido;
             TipoDocumento = tipoDocumento;

@@ -10,3 +10,5 @@ var empleado1 = new Empleado("vale", 21, "coder", 1200);
 empleado1.MostrarInformacion();
 
 Console.WriteLine(Conversor.ConvertirFahrenheitACelsius());
+
+Consola.CambioColor();
