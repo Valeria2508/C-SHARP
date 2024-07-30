@@ -18,7 +18,8 @@ namespace Escuela_Repaso.models
 
         //  METODO PARA MOSTRAR DETALLES DE LA PERSONA ESTE ES EL PADRE
 
-        public void MostrarDetalles(){
+        // AL HACER SOBRE ESCRITURA DE DATOS, EN ESTE CASO DE MOSTRAR DETALLES, EN EL PADRE SE USA EL VIRTUAL
+        public virtual void MostrarDetalles(){
             Console.WriteLine($"Nombre: {Nombre}");
             Console.WriteLine($"Apellido: {Apellido}");
             Console.WriteLine($"Tipo de documeto: {TipoDocumento}");
@@ -26,6 +27,6 @@ namespace Escuela_Repaso.models
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Teléfono: {Telefono}");
         }
-
+  //###################  HASTA AQUI LLEGARON LOS METODS DE PERSONA PLANTEADOS EN EL UML ###################
     }
 }
