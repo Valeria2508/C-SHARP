@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.ComponentModel.Design;
+using Ejemplo_POO_Interfaces.models;
+
+ListaCoders.Menu();
