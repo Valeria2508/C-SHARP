@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,8 +19,7 @@ namespace Taller.models
         public required string TipoVehiculo { get; set; }
 
         //enlaces foraneos
-        [ForiginKey("PropietarioId")]
+        [ForeignKey("PropietarioId")]
         public required Propietario? Propietario { get; set; }
     }
 }
-|   

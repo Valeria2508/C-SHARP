@@ -1,5 +1,6 @@
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
+using Taller.data;
 var builder = WebApplication.CreateBuilder(args);
 
 Env.Load();
