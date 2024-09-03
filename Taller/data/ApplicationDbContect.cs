@@ -24,8 +24,24 @@ public class ApplicationDbContext : DbContext
             vehiculo.Property(v => v.TipoVehiculo).HasMaxLength(50).IsRequired();
             vehiculo.Property(v => v.NumeroChasis).HasMaxLength(50).IsRequired();
             vehiculo.HasOne(v => v.Propietario)
-            .HasForeignKey(v => v.PropietarioId);
+                .WithMany(p => p.Vehiculos)
+                .HasForeignKey(v => v.PropietarioId);
         });
+
+        // modelBuilder.Entity<Propietario>(vehiculo => {
+        //     vehiculo.ToTable("Propietario");
+        //     vehiculo.Property(p => p.Id ).ValueGeneratedOnAdd();
+        //     vehiculo.Property(p => p.Nombre).HasMaxLength(50).IsRequired();
+        //     vehiculo.Property(p => p.Apellido).HasMaxLength(50).IsRequired();
+        //     vehiculo.Property(p => p.NumeroDeIdentificacion).IsRequired();
+        //     vehiculo.Property(p => p.FotoPerfil).IsRequired().HasMaxLength(50);
+        //     vehiculo.Property(p => p.Direccion).HasMaxLength(50).IsRequired();
+        //     vehiculo.Property(p => p.Telefono).HasMaxLength(50).IsRequired();
+        //     vehiculo.Property(p => p.Correo).HasMaxLength(50).IsRequired();
+        //     vehiculo.HasOne(p => p.Vehiculos)
+        //         .WithMany(v => v.Propietario)
+        //         .HasForeignKey(p => p.VehiculoId);
+        // });
   
     }
     

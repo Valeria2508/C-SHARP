@@ -20,7 +20,7 @@ namespace Taller.models
         public required string NumeroChasis {get; set;}
 
         //enlaces foraneos
-        [ForeignKey("PropietarioId")]
+
         public required Propietario? Propietario { get; set; }
     }
 }
