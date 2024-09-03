@@ -17,6 +17,7 @@ namespace Taller.models
         public required int Año { get; set; }
         public required string Color { get; set; }
         public required string TipoVehiculo { get; set; }
+        public required string NumeroChasis {get; set;}
 
         //enlaces foraneos
         [ForeignKey("PropietarioId")]

@@ -12,4 +12,21 @@ public class ApplicationDbContext : DbContext
     {
 
     }
+    protected override void OnModelCreating(ModelBuilder modelBuilder){
+        modelBuilder.Entity<Vehiculo>(vehiculo => {
+            vehiculo.ToTable("Vehiculos");
+            vehiculo.Property(v => v.Id).ValueGeneratedOnAdd();
+            vehiculo.Property(v => v.Marca).HasMaxLength(50).IsRequired();
+            vehiculo.Property(v => v.Modelo).HasMaxLength(50).IsRequired();
+            vehiculo.Property(v => v.PropietarioId).IsRequired();
+            vehiculo.Property(v => v.Año).IsRequired().HasMaxLength(50);
+            vehiculo.Property(v => v.Color).HasMaxLength(50).IsRequired();
+            vehiculo.Property(v => v.TipoVehiculo).HasMaxLength(50).IsRequired();
+            vehiculo.Property(v => v.NumeroChasis).HasMaxLength(50).IsRequired();
+            vehiculo.HasOne(v => v.Propietario)
+            .HasForeignKey(v => v.PropietarioId);
+        });
+  
+    }
+    
 }
